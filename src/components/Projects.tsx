@@ -53,10 +53,10 @@ const projects: Project[] = [
   {
     title: "Sentiment Analysis Project",
     description:
-      "A machine learning project focused on analyzing and classifying text sentiment using NLP techniques. Currently under development.",
+      "A machine learning project focused on analyzing and classifying text sentiment using NLP techniques..",
     techStack: ["Python", "TensorFlow", "Scikit-learn", "NLTK", "Pandas"],
     github: "https://github.com/yohansmith/Sentiment-Analysis-Project",
-    isUnderDevelopment: true,
+    isUnderDevelopment: false,
   },
   {
     title: "Customer Satisfaction Analysis Dashboard",
