@@ -51,6 +51,21 @@ interface Project {
 
 const projects: Project[] = [
   {
+  title: "Airbnb Data Engineering Pipeline",
+  description:
+    "Built an end-to-end data engineering pipeline using the Inside Airbnb London dataset, covering data ingestion, cleaning, dimensional modeling, exploratory data analysis, and statistical testing to generate actionable business insights.",
+  techStack: [
+    "Python",
+    "DuckDB",
+    "SQL",
+    "Pandas",
+    "NumPy",
+    "Matplotlib",
+    "Seaborn"
+  ],
+  github: "https://github.com/yohansmith/airbnb-data-engineering-assessment",
+  },
+  {
     title: "Sentiment Analysis Project",
     description:
       "A machine learning project focused on analyzing and classifying text sentiment using NLP techniques.",
