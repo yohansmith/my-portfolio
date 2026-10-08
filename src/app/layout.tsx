@@ -15,7 +15,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Yohan Damian Smith | Data Science Portfolio",
-  description: "Data Science Undergraduate | AI/ML Enthusiast",
+  description: "Data Science Graduate | AI/ML Enthusiast",
 };
 
 export default function RootLayout({
