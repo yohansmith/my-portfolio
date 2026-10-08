@@ -38,7 +38,7 @@ export default function Hero() {
             Yohan Damian Smith
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
-            Data Science Undergraduate | AI/ML Enthusiast
+            Data Science Graduate | AI/ML Enthusiast
           </p>
           <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8">
             Passionate about leveraging data science and machine learning to solve
