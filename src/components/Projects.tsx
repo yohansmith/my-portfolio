@@ -57,7 +57,7 @@ const projects: Project[] = [
     github: "https://github.com/yohansmith/airbnb-data-engineering-assessment",
     category: "Data Engineering",
     featured: true,
-    terminalTag: "> repo: github.com/your-username/airbnb-pipeline",
+    terminalTag: "> repo: github.com/yohansmith/airbnb-data-engineering-assessment",
   },
   {
     title: "Sentiment Analysis Project",
@@ -66,7 +66,7 @@ const projects: Project[] = [
     techStack: ["Python", "TensorFlow", "Scikit-learn", "NLTK", "Pandas"],
     github: "https://github.com/yohansmith/Sentiment-Analysis-Project",
     category: "Machine Learning",
-    terminalTag: "> repo: github.com/your-username/sentiment-analysis",
+    terminalTag: "> repo: github.com/yohansmith/Sentiment-Analysis-Project",
   },
   {
     title: "Customer Satisfaction Analysis Dashboard",
@@ -75,7 +75,7 @@ const projects: Project[] = [
     techStack: ["Python", "Streamlit", "Pandas", "Matplotlib", "Seaborn"],
     github: "https://github.com/yohansmith/Customer-Satisfaction-Analysis-Dashboard",
     category: "Data Analytics",
-    terminalTag: "> repo: github.com/your-username/customer-satisfaction",
+    terminalTag: "> repo: github.com/yohansmith/Customer-Satisfaction-Analysis-Dashboard",
   },
 ];
 

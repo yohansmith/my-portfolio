@@ -132,7 +132,7 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.6 }}
             className="text-sm sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
-            Passionate about leveraging advanced data science, statistical modeling, and machine learning pipelines to solve complex real-world problems and build cutting-edge AI systems.
+            I turn messy data into reliable insight and automation. Data quality, analytics, and LLM workflows.
           </motion.p>
 
           <motion.div
