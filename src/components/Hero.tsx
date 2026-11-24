@@ -6,22 +6,47 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
+const ROLES = [
+  "BSc (Hons) Data Science Graduate",
+  "Computer Vision & AI Data Specialist",
+  "LLM & RAG Workflow Builder",
+  "Chess Player & Problem Solver",
+];
+
 export default function Hero() {
+  const [roleIndex, setRoleIndex] = useState(0);
   const [typedText, setTypedText] = useState("");
-  const fullText = "Data Science Graduate | AI/ML Enthusiast";
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      if (i < fullText.length) {
-        setTypedText(fullText.substring(0, i + 1));
-        i++;
-      } else {
-        clearInterval(timer);
-      }
-    }, 50);
-    return () => clearInterval(timer);
-  }, []);
+    const currentRole = ROLES[roleIndex];
+
+    const timeout = setTimeout(
+      () => {
+        if (!isDeleting) {
+          if (typedText.length < currentRole.length) {
+            setTypedText(currentRole.slice(0, typedText.length + 1));
+          } else {
+            setIsDeleting(true);
+          }
+        } else {
+          if (typedText.length > 0) {
+            setTypedText(currentRole.slice(0, typedText.length - 1));
+          } else {
+            setIsDeleting(false);
+            setRoleIndex((prev) => (prev + 1) % ROLES.length);
+          }
+        }
+      },
+      !isDeleting && typedText.length === currentRole.length
+        ? 1800
+        : isDeleting
+        ? 35
+        : 65
+    );
+
+    return () => clearTimeout(timeout);
+  }, [typedText, isDeleting, roleIndex]);
 
   return (
     <section
@@ -58,7 +83,8 @@ export default function Hero() {
             <Terminal size={14} />
             <span>sys.init(&quot;Yohan_Smith_Portfolio.ai&quot;)</span>
           </motion.div>
-          <div className="relative w-44 h-44 md:w-52 md:h-52 mb-8 group">
+
+          <div className="relative w-40 h-40 sm:w-44 sm:h-44 md:w-52 md:h-52 mb-7 group">
             <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-600 to-cyan-500 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-500"></div>
             <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-emerald-500 dark:border-emerald-400 shadow-2xl bg-gray-900">
               <Image
@@ -79,24 +105,24 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-emerald-600 dark:text-emerald-400 font-tech font-medium mb-3 tracking-wide"
+            className="text-xs sm:text-sm text-emerald-600 dark:text-emerald-400 font-tech font-medium mb-2 tracking-wide"
           >
-            // HELLO, WORLD. I&apos;M
+            {"// HELLO, WORLD. I'M"}
           </motion.p>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight"
+            className="text-3xl sm:text-5xl md:text-7xl font-bold text-gray-900 dark:text-white leading-tight mb-5 sm:mb-6 tracking-tight"
           >
             Yohan Damian Smith
           </motion.h1>
 
-          <div className="h-10 mb-6 flex items-center justify-center">
-            <p className="text-lg sm:text-xl md:text-2xl font-tech text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-500/10 px-4 py-1.5 rounded-lg border border-emerald-500/20">
+          <div className="min-h-[2.75rem] mb-7 sm:mb-8 flex items-center justify-center">
+            <p className="text-sm sm:text-lg md:text-xl font-tech text-emerald-700 dark:text-emerald-300 font-semibold bg-emerald-500/10 px-3.5 py-1.5 rounded-lg border border-emerald-500/20 whitespace-nowrap">
               {typedText}
-              <span className="inline-block w-2 h-5 ml-1 bg-emerald-500 animate-pulse" />
+              <span className="inline-block w-1.5 sm:w-2 h-4 sm:h-5 ml-1 align-middle bg-emerald-500 animate-pulse" />
             </p>
           </div>
 
@@ -104,7 +130,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-sm sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             Passionate about leveraging advanced data science, statistical modeling, and machine learning pipelines to solve complex real-world problems and build cutting-edge AI systems.
           </motion.p>
