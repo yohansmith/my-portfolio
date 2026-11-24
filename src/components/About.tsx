@@ -21,7 +21,7 @@ export default function About() {
               About <span className="text-gradient">Me</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
-              Dedicated Data Science graduate with a strong foundation in statistical analytics, machine learning algorithms, and scalable data engineering.
+              Here's how I got from a school ICT class to data science, one step at a time.
             </p>
           </div>
 
@@ -38,10 +38,10 @@ export default function About() {
                   <div className="p-3 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-xl border border-emerald-500/30">
                     <User className="text-emerald-600 dark:text-emerald-400" size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Education</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Where it started</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-                  Pursuing a rigorous degree in Data Science with top honors. Building deep theoretical and practical mastery in statistical modeling, neural networks, and data visualization.
+                  In 2021 I began a diploma in ICT at ESOFT, and I was hooked on computing from the start. I moved on to a BTEC HND in General Computing, then finished a BSc (Hons) in Data Science with London Metropolitan University, graduating with Second Class Upper Honours.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800 font-tech text-xs text-emerald-600 dark:text-emerald-400">
@@ -61,14 +61,14 @@ export default function About() {
                   <div className="p-3 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-xl border border-emerald-500/30">
                     <Target className="text-emerald-600 dark:text-emerald-400" size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Career Goals</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Learning on the job</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-                  Aspire to engineer high-impact AI/ML systems and production-grade data pipelines that solve pressing industry challenges and empower intelligent decision-making.
+                  My first job was at Infomate (John Keells Group), where I handled 300+ invoices a day for a Swedish client and kept to their 90% accuracy standard. It taught me how much careful data quality matters. Now I'm a data labeler at Atlas Labs, annotating images and videos so computer vision models can learn from them.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800 font-tech text-xs text-emerald-600 dark:text-emerald-400">
-                &gt; target: ml_engineer_role
+                &gt; status: working_with_real_data
               </div>
             </motion.div>
 
@@ -84,14 +84,14 @@ export default function About() {
                   <div className="p-3 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-xl border border-emerald-500/30">
                     <Brain className="text-emerald-600 dark:text-emerald-400" size={26} />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Core Philosophy</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">What I'm building now</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-sm sm:text-base">
-                  Curious, analytical, and relentless about continuous learning. I believe clean code, robust statistical rigor, and clear visualizations are the pillars of impactful data science.
+                  I'm teaching myself RAG pipelines, LangChain, and automation with n8n and FastAPI. The goal is to build tools that handle documents the way I used to by hand, only faster. I'd love to grow into an ML engineer role.
                 </p>
               </div>
               <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-800 font-tech text-xs text-emerald-600 dark:text-emerald-400">
-                &gt; focus: continuous_innovation
+                &gt; target: ml_engineer
               </div>
             </motion.div>
           </div>
