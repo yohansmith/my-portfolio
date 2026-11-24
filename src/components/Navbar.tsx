@@ -89,7 +89,7 @@ export default function Navbar() {
             className="text-lg md:text-xl font-bold text-gray-900 dark:text-white"
           >
             <span className="text-green-600 dark:text-green-400">
-              Data science graduate, still curious
+              yohandamiansmith
             </span>
           </Link>
 
