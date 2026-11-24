@@ -34,16 +34,15 @@ const navLinks = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
     setDarkMode(isDark);
-    if (isDark) {
-      document.documentElement.classList.add("dark");
-    }
   }, []);
 
   useEffect(() => {
@@ -55,12 +54,19 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
     if (darkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-  }, [darkMode]);
+  }, [darkMode, mounted]);
+
+  const toggleDarkMode = () => {
+    const newMode = !darkMode;
+    setDarkMode(newMode);
+    localStorage.setItem("theme", newMode ? "dark" : "light");
+  };
 
   const handleHireMe = () => {
     window.location.href = "mailto:yohandamiansmith@gmail.com?subject=Hello%20Yohan";
@@ -82,7 +88,8 @@ export default function Navbar() {
             href="#home"
             className="text-lg md:text-xl font-bold text-gray-900 dark:text-white"
           >
-            <span className="text-green-600 dark:text-green-400">Turning Data Into Meaningful Insights
+            <span className="text-green-600 dark:text-green-400">
+              Turning Data Into Meaningful Insights
             </span>
           </Link>
 
@@ -116,20 +123,11 @@ export default function Navbar() {
               Hire Me
             </button>
             <button
-              onClick={() => {
-                const newMode = !darkMode;
-                setDarkMode(newMode);
-                localStorage.setItem("theme", newMode ? "dark" : "light");
-                if (newMode) {
-                  document.documentElement.classList.add("dark");
-                } else {
-                  document.documentElement.classList.remove("dark");
-                }
-              }}
+              onClick={toggleDarkMode}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
               aria-label="Toggle dark mode"
             >
-              {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+              {mounted && darkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </div>
 
@@ -173,20 +171,13 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => {
-                const newMode = !darkMode;
-                setDarkMode(newMode);
-                localStorage.setItem("theme", newMode ? "dark" : "light");
-                if (newMode) {
-                  document.documentElement.classList.add("dark");
-                } else {
-                  document.documentElement.classList.remove("dark");
-                }
+                toggleDarkMode();
                 setIsOpen(false);
               }}
               className="flex items-center gap-2 p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 w-full"
             >
-              {darkMode ? <Sun size={18} /> : <Moon size={18} />}
-              {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              {mounted && darkMode ? <Sun size={18} /> : <Moon size={18} />}
+              {mounted && darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             </button>
           </div>
         </motion.div>

@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, ExternalLink } from "lucide-react";
+import { Mail, Send } from "lucide-react";
 
-const GitHubIcon = ({ className }: { className?: string }) => (
+const GitHubIcon = ({ className, size = 18 }: { className?: string; size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -21,11 +21,11 @@ const GitHubIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const LinkedInIcon = ({ className }: { className?: string }) => (
+const LinkedInIcon = ({ className, size = 18 }: { className?: string; size?: number }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24"
-    height="24"
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -42,56 +42,62 @@ const LinkedInIcon = ({ className }: { className?: string }) => (
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="py-20 bg-gray-50 dark:bg-gray-800"
-    >
+    <section id="contact" className="py-24 bg-transparent relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white text-center mb-4">
-            Get In <span className="text-green-600">Touch</span>
-          </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-            Feel free to reach out for collaborations, questions, or just to say hello!
-          </p>
+          <div className="text-center mb-16">
+            <span className="text-emerald-600 dark:text-emerald-400 font-tech text-sm tracking-widest uppercase mb-3 block">
+              // LET&apos;S CONNECT
+            </span>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
+              Get In <span className="text-gradient">Touch</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">
+              Feel free to reach out for collaborations, AI/ML opportunities, data science consulting, or just to say hello!
+            </p>
+          </div>
 
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-6 max-w-xl mx-auto">
             <motion.a
               href="mailto:yohandamiansmith@gmail.com"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="flex items-center gap-4 bg-white dark:bg-gray-900 px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow w-full max-w-md"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="glass-panel p-6 rounded-2xl shadow-xl magnetic-glow flex items-center gap-5 w-full group"
             >
-              <div className="p-3 bg-green-100 dark:bg-green-900 rounded-lg">
-                <Mail className="text-green-600 dark:text-green-400" size={24} />
+              <div className="p-4 bg-emerald-500/10 dark:bg-emerald-500/20 rounded-xl border border-emerald-500/30 group-hover:bg-emerald-500 group-hover:text-white transition-colors">
+                <Mail className="text-emerald-600 dark:text-emerald-400 group-hover:text-white" size={26} />
               </div>
-              <div>
-                <p className="font-semibold text-gray-900 dark:text-white">Email Me</p>
-                <p className="text-gray-600 dark:text-gray-400">yohandamiansmith@gmail.com</p>
+              <div className="flex-1">
+                <p className="font-tech text-xs text-emerald-600 dark:text-emerald-400 mb-1">// DIRECT EMAIL</p>
+                <p className="font-semibold text-gray-900 dark:text-white text-base sm:text-lg">yohandamiansmith@gmail.com</p>
               </div>
-              <ExternalLink className="ml-auto text-gray-400" size={20} />
+              <Send size={18} className="text-gray-400 group-hover:text-emerald-500 transition-colors" />
             </motion.a>
 
-            <div className="flex gap-6">
+            <div className="flex flex-col sm:flex-row gap-4 w-full">
               <motion.a
                 href="https://github.com/yohansmith"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: 0.2, duration: 0.5 }}
-                className="flex items-center gap-3 bg-white dark:bg-gray-900 px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="glass-panel p-5 rounded-2xl shadow-xl magnetic-glow flex items-center justify-center gap-3 flex-1 group"
               >
-                <GitHubIcon className="text-gray-900 dark:text-white" />
-                <span className="font-medium text-gray-900 dark:text-white">GitHub</span>
+                <GitHubIcon className="text-gray-900 dark:text-white group-hover:scale-110 transition-transform" size={22} />
+                <span className="font-semibold text-gray-900 dark:text-white">GitHub Profile</span>
               </motion.a>
 
               <motion.a
@@ -100,12 +106,14 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
-                className="flex items-center gap-3 bg-white dark:bg-gray-900 px-6 py-4 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="glass-panel p-5 rounded-2xl shadow-xl magnetic-glow flex items-center justify-center gap-3 flex-1 group"
               >
-                <LinkedInIcon className="text-blue-700" />
-                <span className="font-medium text-gray-900 dark:text-white">LinkedIn</span>
+                <LinkedInIcon className="text-blue-600 group-hover:scale-110 transition-transform" size={22} />
+                <span className="font-semibold text-gray-900 dark:text-white">LinkedIn Network</span>
               </motion.a>
             </div>
           </div>
