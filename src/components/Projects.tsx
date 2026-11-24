@@ -43,8 +43,8 @@ const projects: Project[] = [
     title: "Federated Healthcare Recommender System",
     description:
       "A privacy-preserving healthcare recommendation system using federated learning to deliver personalized health suggestions across decentralized nodes without compromising patient data.",
-    techStack: ["Python", "TensorFlow", "PyTorch", "Pandas", "NumPy"],
-    github: "https://github.com", // TODO: replace with real repo URL
+    techStack: ["Python", "PyTorch", "Pandas", "NumPy"],
+    github: "https://github.com/yohansmith/Federated-Healthcare-Recommender-System",
     category: "Machine Learning",
     featured: true,
     terminalTag: "> repo: github.com/your-username/federated-healthcare",
@@ -54,7 +54,7 @@ const projects: Project[] = [
     description:
       "Built an end-to-end data engineering pipeline using the Inside Airbnb London dataset, covering data ingestion, cleaning, dimensional modeling, exploratory data analysis, and statistical testing.",
     techStack: ["Python", "DuckDB", "SQL", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
-    github: "https://github.com", // TODO
+    github: "https://github.com/yohansmith/airbnb-data-engineering-assessment",
     category: "Data Engineering",
     featured: true,
     terminalTag: "> repo: github.com/your-username/airbnb-pipeline",
@@ -64,7 +64,7 @@ const projects: Project[] = [
     description:
       "A machine learning project focused on analyzing and classifying text sentiment using advanced NLP techniques and deep neural network embeddings.",
     techStack: ["Python", "TensorFlow", "Scikit-learn", "NLTK", "Pandas"],
-    github: "https://github.com", // TODO
+    github: "https://github.com/yohansmith/Sentiment-Analysis-Project",
     category: "Machine Learning",
     terminalTag: "> repo: github.com/your-username/sentiment-analysis",
   },
@@ -73,7 +73,7 @@ const projects: Project[] = [
     description:
       "An interactive analytics dashboard for exploring customer satisfaction metrics and key performance indicators using visualization libraries and statistical correlation matrices.",
     techStack: ["Python", "Streamlit", "Pandas", "Matplotlib", "Seaborn"],
-    github: "https://github.com", // TODO
+    github: "https://github.com/yohansmith/Customer-Satisfaction-Analysis-Dashboard",
     category: "Data Analytics",
     terminalTag: "> repo: github.com/your-username/customer-satisfaction",
   },
@@ -138,14 +138,13 @@ export default function Projects() {
           className="text-center mb-14"
         >
           <p className="font-mono text-xs sm:text-sm tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-3">
-            {"// FEATURED WORK & REPOSITORIES"}
+            {"// WHAT I'VE BUILT"}
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
             My <span className="text-emerald-600 dark:text-emerald-400">Projects</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-            Interactive showcase of data science pipelines, machine learning models, and
-            analytics dashboards. Swipe or use controls to explore.
+            A few things I've built while learning. Swipe through, and tap "View Source Code" to see the real thing
           </p>
         </motion.div>
 

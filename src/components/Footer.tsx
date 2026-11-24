@@ -24,9 +24,9 @@ export default function Footer() {
           transition={{ duration: 0.5 }}
         >
           <h3 className="text-2xl font-bold mb-2">
-            Yohan <span className="text-emerald-500">Damian Smith</span>
+            <span className="text-emerald-500">Yohan Damian Smith</span>
           </h3>
-          <p className="text-gray-400 mb-8">Turning Data Into Meaningful Insights</p>
+          <p className="text-gray-400 mb-8">Thank you for visiting my portfolio!</p>
 
           <div className="flex justify-center gap-6 flex-wrap">
             {navLinks.map((link) => (

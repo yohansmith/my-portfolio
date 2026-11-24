@@ -89,7 +89,7 @@ export default function Navbar() {
             className="text-lg md:text-xl font-bold text-gray-900 dark:text-white"
           >
             <span className="text-green-600 dark:text-green-400">
-              Turning Data Into Meaningful Insights
+              Data science graduate, still curious
             </span>
           </Link>
 
@@ -120,7 +120,7 @@ export default function Navbar() {
               className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors text-sm font-medium"
             >
               <Mail size={16} />
-              Hire Me
+              Let's Talk!
             </button>
             <button
               onClick={toggleDarkMode}
@@ -167,7 +167,7 @@ export default function Navbar() {
               className="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg w-full"
             >
               <Mail size={16} />
-              Hire Me
+              Let's Talk!
             </button>
             <button
               onClick={() => {

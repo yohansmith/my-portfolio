@@ -43,7 +43,7 @@ export default function Skills() {
         >
           <div className="text-center mb-16">
             <span className="text-emerald-600 dark:text-emerald-400 font-tech text-sm tracking-widest uppercase mb-3 block">
-              {"// TECH STACK & CAPABILITIES"}
+              {"// WHAT I WORK WITH"}
             </span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
               Skills &amp; <span className="text-gradient">Technologies</span>
